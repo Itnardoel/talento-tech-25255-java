@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-  ArrayList<String> articles = new ArrayList<>();
+  static ArrayList<String> articles = new ArrayList<>();
 
   static String[] menuItems =
       {"1. Crear artículo", "2. Modificar artículo", "3. Listar artículo por posición",
@@ -17,6 +17,12 @@ public class Main {
 
     while (option != 6) {
       showMenu();
+
+      if (!scanner.hasNextInt()) {
+        System.out.println("❌ Entrada inválida. Por favor, ingresa un número del menú.");
+        scanner.nextLine();
+        continue;
+      }
 
       option = scanner.nextInt();
       scanner.nextLine();
@@ -50,10 +56,11 @@ public class Main {
         default:
           System.out.println("❌ Opción inválida.");
       }
+
     }
   }
 
-  public static void showMenu() {
+  static void showMenu() {
     System.out.println("\n===== MENÚ DE ARTÍCULOS =====");
     for (String item : menuItems) {
       System.out.println(item);
