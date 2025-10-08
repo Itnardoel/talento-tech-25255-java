@@ -33,13 +33,20 @@ public class Main {
       // switch para manejar las opciones del menu
       switch (opcion) {
         case 1 -> crearArticulo();
-        case 2 -> listarArticulos();
-        case 3 -> actualizarArticulo();
-        case 4 -> eliminarArticulo();
-        // Desafio pre entrega: crear la opcion 5 con un method buscarArticulo(String nombre), que
+        case 2 -> crearCategoria();
+        case 3 -> listarArticulos();
+        case 4 -> actualizarArticulo();
+        case 5 -> eliminarArticulo();
+
+        // Desafio pre entrega: crear la opcion 6 con un method buscarArticulo(String nombre), que
         // busque un articulo por nombre, si tenemos mas de un articulo con el mismo nombre, los
         // muestra todos y si no encuentra ninguno, muestra un mensaje
-        // case 5 -> buscarArticulo();
+        // case 6 -> buscarArticulo();
+        // desafio para la pre entrega:
+        // terminar el crud de categoria
+        // desafio pre entrega:
+        // crear crud de usuarios
+        // crear crud de pedidos
         case 0 -> System.out.println("¡Hasta luego!");
         default -> System.out.println("Opción inválida");
       }
@@ -49,11 +56,14 @@ public class Main {
 
   // method static que muestra el menu
   private static void mostrarMenu() {
+    System.out.println("\n***************************");
     System.out.println("\n=== CRUD de Artículos ===");
     System.out.println("1) Crear artículo");
-    System.out.println("2) Listar artículos");
-    System.out.println("3) Actualizar artículo");
-    System.out.println("4) Eliminar artículo");
+    System.out.println("2) Crear categoría");
+    System.out.println("3) Listar artículos");
+    System.out.println("4) Actualizar artículo");
+    System.out.println("5) Eliminar artículo");
+    // System.out.println("6) Buscar artículo");
     System.out.println("0) Salir");
     System.out.print("Opción: ");
   }
@@ -92,7 +102,8 @@ public class Main {
     }
     Articulo a = new Articulo(nombre, precio, seleccionada);
     articulos.add(a);
-    System.out.println("Artículo creado: " + a);
+    boolean conCategoria = true;
+    System.out.println("Artículo creado: " + a.mostrarInfo(conCategoria));
 
   }
 
@@ -123,12 +134,40 @@ public class Main {
     // recorremos la lista de articulos y buscamos el que tiene el id indicado
     for (Articulo a : articulos) {
       if (a.getId() == id) {
+        // validar si el user quiere actualizar el nombre, precio y categoria
+        System.out.println("Artículo encontrado: " + a.mostrarInfo());
+        // desafio pre entrega: preguntar si quiere actualizar cada campo
+        // si la respuesta es si, pedir el nuevo valor
+        // si la respuesta es no, no hacer nada
         System.out.print("Nuevo nombre: ");
         a.setNombre(scanner.nextLine());
         System.out.print("Nuevo precio: ");
         a.setPrecio(scanner.nextDouble());
         scanner.nextLine();
-        System.out.println("Actualizado: " + a);
+        // pedimos la nueva categoria pasar esto a method static dentro del main para
+        // reutilizarlo(desafio pre entrega)
+        System.out.println("Categorías disponibles:");
+        for (Categoria c : categorias) {
+          System.out.println(c.getId() + ") " + c.getNombre());
+        }
+        System.out.print("Elegí id de categoría: ");
+        int idCat = scanner.nextInt();
+        scanner.nextLine();
+
+        Categoria seleccionada = null;
+        for (Categoria c : categorias) {
+          if (c.getId() == idCat) {
+            seleccionada = c;
+            break;
+          }
+        }
+
+        if (seleccionada == null) {
+          System.out.println("Categoría inválida.");
+          return;
+        }
+        a.setCategoria(seleccionada);
+        System.out.println("Actualizado: " + a.mostrarInfo());
         return;
       }
     }
@@ -153,5 +192,14 @@ public class Main {
     // y en el metodo listarArticulos, mostramos solo los articulos activos
     articulos.removeIf(a -> a.getId() == id);
     System.out.println("Artículo eliminado (si existía).");
+  }
+
+  // methods del crud de categoria
+  private static void crearCategoria() {
+    System.out.print("Nombre de la nueva categoría: ");
+    String nombre = scanner.nextLine();
+    Categoria nuevaCat = new Categoria(nombre);
+    categorias.add(nuevaCat);
+    System.out.println("Categoría creada: " + nuevaCat.mostrarInfo());
   }
 }

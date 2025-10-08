@@ -71,8 +71,13 @@ public class Articulo {
   }
 
   public void setPrecio(double precio) {
+    /*
+     * if (precio < 0){ this.precio = 0; }else{ this.precio = precio; }
+     */
     this.precio = precio;
   }
+  // setPrecio que valide que el precio no sea negativo
+  // if (precio < 0) { this.precio = 0; } else { this.precio = precio; }
 
   public Categoria getCategoria() {
     return categoria;
@@ -84,17 +89,18 @@ public class Articulo {
 
   // ejemplo de un method que no es un getter ni un setter
   public String mostrarInfo() {
-    return "Articulo{id=" + id + ", nombre='" + nombre + "', precio=" + precio + ", categoria="
-        + categoria.getNombre() + "}";
+    return "Articulo | id=" + this.id + ", nombre='" + this.nombre + "', precio=" + this.precio
+        + ", categoria=" + this.categoria.getNombre() + "|";
   }
 
   // sobrecarga del method mostrarInfo
   public String mostrarInfo(boolean conCategoria) {
     if (conCategoria) {
-      return "Articulo{id=" + id + ", nombre='" + nombre + "', precio=" + precio + ", categoria="
-          + categoria.getNombre() + "}";
+      return "Articulo | id=" + this.id + ", nombre='" + this.nombre + "', precio=" + this.precio
+          + ", categoria=" + this.categoria.getNombre() + "|";
     } else {
-      return "Articulo{id=" + id + ", nombre='" + nombre + "', precio=" + precio + "}";
+      return "Articulo | id=" + this.id + ", nombre='" + this.nombre + "', precio=" + this.precio
+          + "|";
     }
   }
 

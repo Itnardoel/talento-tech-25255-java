@@ -31,8 +31,13 @@ public class Categoria {
     this.nombre = nombre;
   }
 
-  @Override
-  public String toString() {
-    return "Categoria{id=" + id + ", nombre='" + nombre + "'}";
+  // method para mostrar info de la categoria
+  public String mostrarInfo() {
+    return "Categoria | id=" + this.id + ", nombre='" + this.nombre + "'|";
   }
+
+  // @Override
+  // public String toString() {
+  // return "Categoria{id=" + id + ", nombre='" + nombre + "'}";
+  // }
 }
