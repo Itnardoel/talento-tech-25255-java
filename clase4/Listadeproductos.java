@@ -1,4 +1,4 @@
-package clase3;
+package clase4;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,8 @@ public class Listadeproductos {
             // Capitalizar cada palabra
             for (String palabra : palabras) {
                 if (!palabra.isEmpty()) {
-                    resultado += Character.toUpperCase(palabra.charAt(0)) + palabra.substring(1) + " ";
+                    resultado +=
+                            Character.toUpperCase(palabra.charAt(0)) + palabra.substring(1) + " ";
                 }
             }
 

@@ -1,4 +1,4 @@
-package clase5;
+package clase6;
 
 public class Categoria {
   private int id;

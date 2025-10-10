@@ -1,11 +1,11 @@
-package clase3;
+package clase4;
 
 
 public class Manipulacionstringarrays {
     public static void main(String[] args) {
         // Cadena original con espacios y mayúsculas mezcladas
         String cadenaOriginal = " té CHAi ";
-        
+
         // Limpieza y formato: trim + toLowerCase + capitalize manual
         String cadenaLimpia = cadenaOriginal.trim().toLowerCase(); // "té chai"
         // split() para separar las palabras por espacios
@@ -13,7 +13,7 @@ public class Manipulacionstringarrays {
         // que es StringBuilder para construir la cadena formateada
         // StringBuilder es más eficiente para concatenar cadenas
         StringBuilder resultado = new StringBuilder();
-       
+
         for (String palabra : palabras) {
             // Convertir la primera letra a mayúscula y el resto a minúscula
             // Que es isEmpty() para evitar errores con palabras vacías
@@ -24,8 +24,7 @@ public class Manipulacionstringarrays {
                 // y substring(1) para obtener el resto de la palabra
                 // append() para concatenar
                 resultado.append(Character.toUpperCase(palabra.charAt(0)))
-                         .append(palabra.substring(1))
-                         .append(" ");
+                        .append(palabra.substring(1)).append(" ");
             }
         }
         // Convertir StringBuilder a String y eliminar el espacio final

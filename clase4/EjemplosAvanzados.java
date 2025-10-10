@@ -1,4 +1,4 @@
-package clase3;
+package clase4;
 // Archivo: EjemplosAvanzados.java
 
 public class EjemplosAvanzados {
@@ -8,18 +8,18 @@ public class EjemplosAvanzados {
         String nombre = "Gisele Gonzalez";
 
         // array de strings
-        String[] nombresArrays = {"Ana", "Luis", "Carlos","Jose","Laura"};
+        String[] nombresArrays = {"Ana", "Luis", "Carlos", "Jose", "Laura"};
 
         System.out.println("Nombre completo: " + nombresArrays[0]);
         System.out.println("Nombre completo: " + nombresArrays[1]);
         System.out.println("Nombre completo: " + nombresArrays[2]);
         System.out.println("ARRAY: " + nombresArrays.length + " elementos");
         // Recorrer el array
-       
+
         for (int i = 0; i < nombresArrays.length; i++) {
             System.out.println("Nombre en índice " + i + ": " + nombresArrays[i]);
         }
-     
+
 
         // Concatenación
         String saludo = "Hola, " + nombre;
@@ -37,8 +37,9 @@ public class EjemplosAvanzados {
 
         // Comparaciones
         System.out.println("¿Es igual a 'Gisele Gonzalez'? " + nombre.equals("Gisele Gonzalez"));
-        System.out.println("¿Es igual a 'gisele gonzalez' (ignorar mayúsculas)? " + nombre.equalsIgnoreCase("gisele gonzalez"));
-       
+        System.out.println("¿Es igual a 'gisele gonzalez' (ignorar mayúsculas)? "
+                + nombre.equalsIgnoreCase("gisele gonzalez"));
+
         System.out.println("¿Empieza con 'Gis'? " + nombre.startsWith("Gis"));
         System.out.println("¿Termina con 'lez'? " + nombre.endsWith("lez"));
 

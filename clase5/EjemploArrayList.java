@@ -1,4 +1,4 @@
-package clase3;
+package clase5;
 // Archivo: EjemploArrayList.java
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package clase5;
+package clase6;
 
 public class Articulo {
   // que es el encapsulamiento?

@@ -1,4 +1,4 @@
-package clase2;
+package clase3;
 
 // importamos scanner para levantar datos del user
 import java.util.Scanner;
@@ -8,9 +8,11 @@ public class Inicio {
         // Imprime "Hola Mundo desde Java!" en la consola
         System.out.println("Hola Mundo desde Java!");
 
-        //COMO LEVANTAR DATOS POR TECLADO Y GUARDARLO EN MEMORIA
-        //Creamos un objeto Scanner para leer la entrada del usuario
-        //Tipo de dato del objeto nombre = new(palabra reservada para instanciar un objeto en memoria) constructor de la clase con los parametros que recibe para crear ese objeto en memoria.
+        // COMO LEVANTAR DATOS POR TECLADO Y GUARDARLO EN MEMORIA
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        // Tipo de dato del objeto nombre = new(palabra reservada para instanciar un objeto en
+        // memoria) constructor de la clase con los parametros que recibe para crear ese objeto en
+        // memoria.
         Scanner scanner = new Scanner(System.in);
         // Pedimos al usuario que ingrese un número
         System.out.println("Ingrese su edad: ");
@@ -19,21 +21,21 @@ public class Inicio {
         // Imprimimos el número que ingresó el usuario
         System.out.println("Su edad es: " + edad);
 
-        //Ingreso de string
+        // Ingreso de string
         System.out.println("Ingrese su nombre: ");
-        //String nombre = scanner.next(); // next() lee hasta el primer espacio
+        // String nombre = scanner.next(); // next() lee hasta el primer espacio
         String nombreUser = scanner.nextLine(); // nextLine() lee toda la línea incluyendo espacios
         System.out.println("Su nombre es: " + nombreUser);
 
-        //Ingreso de un decimal
+        // Ingreso de un decimal
         System.out.println("Ingrese su altura en metros (ej: 1.75): ");
         double altura = scanner.nextDouble();
         System.out.println("Su altura es: " + altura + " metros");
-        //Ingreso de un caracter
+        // Ingreso de un caracter
         System.out.println("Ingrese la inicial de su nombre: ");
         char inicial = scanner.next().charAt(0); // lee el primer caracter de la entrada
         System.out.println("La inicial de su nombre es: " + inicial);
-        //Ingreso de un booleano
+        // Ingreso de un booleano
         System.out.println("¿Es usted estudiante? (true/false): ");
         boolean esEstudiante = scanner.nextBoolean();
         System.out.println("¿Es usted estudiante? " + esEstudiante);
@@ -61,35 +63,37 @@ public class Inicio {
         // Los tipos primitivos son más eficientes en términos de memoria y rendimiento.
         // Las clases envolventes permiten trabajar con objetos y ofrecen métodos útiles.
         // Las clases envolventes pueden ser nulas, mientras que los tipos primitivos no.
-        // Las clases envolventes son necesarias para trabajar con colecciones (por ejemplo, ArrayList).
-        // En general, se recomienda usar tipos primitivos cuando no se necesita la funcionalidad adicional de las clases envolventes.
-        // int vs Integer   
+        // Las clases envolventes son necesarias para trabajar con colecciones (por ejemplo,
+        // ArrayList).
+        // En general, se recomienda usar tipos primitivos cuando no se necesita la funcionalidad
+        // adicional de las clases envolventes.
+        // int vs Integer
         int primitivo = 5; // Tipo primitivo
         Integer envolvente = 5; // Clase envolvente
         // Autoboxing: conversión automática de tipo primitivo a clase envolvente
         Integer autoboxing = primitivo; // int a Integer
         // Unboxing: conversión automática de clase envolvente a tipo primitivo
-        int unboxing = envolvente; // Integer a int 
+        int unboxing = envolvente; // Integer a int
         // Imprimimos las variables
         System.out.println("Primitivo: " + primitivo);
         System.out.println("Envolvente: " + envolvente);
         System.out.println("Autoboxing: " + autoboxing);
         System.out.println("Unboxing: " + unboxing);
-        //double vs Double
+        // double vs Double
         double primitivoD = 10.5; // Tipo primitivo
         Double envolventeD = 10.5; // Clase envolvente
         // Autoboxing: conversión automática de tipo primitivo a clase envolvente
         Double autoboxingD = primitivoD; // double a Double
         // Unboxing: conversión automática de clase envolvente a tipo primitivo
         double unboxingD = envolventeD; // Double a double
-        //char vs Character
+        // char vs Character
         char primitivoC = 'A'; // Tipo primitivo
         Character envolventeC = 'A'; // Clase envolvente
         // Autoboxing: conversión automática de tipo primitivo a clase envolvente
         Character autoboxingC = primitivoC; // char a Character
         // Unboxing: conversión automática de clase envolvente a tipo primitivo
         char unboxingC = envolventeC; // Character a char
-        //boolean vs Boolean
+        // boolean vs Boolean
         boolean primitivoB = true; // Tipo primitivo
         Boolean envolventeB = true; // Clase envolvente
         // Autoboxing: conversión automática de tipo primitivo a clase envolvente
@@ -130,31 +134,37 @@ public class Inicio {
         System.out.println("String to Boolean: " + booleanValue);
         System.out.println("Boolean to String: " + booleanToString);
 
-        // STRINGS EN JAVA, explicacion de  == y equals()
+        // STRINGS EN JAVA, explicacion de == y equals()
         // Los Strings en Java son objetos inmutables que representan secuencias de caracteres.
 
         // VAMOS CON CUATRO CASOS PARA ENTENDER COMO MANEJA LA MEMORIA JAVA CON STRINGS
-        //IMPORTANTE:
+        // IMPORTANTE:
         /*
-         * Literales
-         * Cuando escribís directamente un literal:
-         * String a = "Hola";
-         * El texto "Hola" se guarda automáticamente en el String Pool (una zona especial dentro de la memoria heap y se le asigna una referencia en memoria).
-         * Si ya existía "Hola" en el pool, Java reutiliza el mismo objeto, es decir no crea un nuevo objeto, sino que tengo dos variables apuntando al mismo objeto en memoria.
-         * Si no existía ese String Literal en la memoria, lo agrega al pool, es decir crea un nuevo objeto en memoria.
-         * Por eso dos literales iguales siempre apuntan al mismo objeto.
-        */
+         * Literales Cuando escribís directamente un literal: String a = "Hola"; El texto "Hola" se
+         * guarda automáticamente en el String Pool (una zona especial dentro de la memoria heap y
+         * se le asigna una referencia en memoria). Si ya existía "Hola" en el pool, Java reutiliza
+         * el mismo objeto, es decir no crea un nuevo objeto, sino que tengo dos variables apuntando
+         * al mismo objeto en memoria. Si no existía ese String Literal en la memoria, lo agrega al
+         * pool, es decir crea un nuevo objeto en memoria. Por eso dos literales iguales siempre
+         * apuntan al mismo objeto.
+         */
         // CASO 1:
-        /*Aquí declaramos una variable llamada nombre de tipo String y le asignamos el valor "Gabriel".
-          En Java, las cadenas (String) SON OBJETOS INMUTABLES, pero hay un detalle importante: los literales de cadenas se almacenan en el String Pool (una zona especial de memoria).En este caso, "Gabriel" se guarda en ese pool de strings.*/
+        /*
+         * Aquí declaramos una variable llamada nombre de tipo String y le asignamos el valor
+         * "Gabriel". En Java, las cadenas (String) SON OBJETOS INMUTABLES, pero hay un detalle
+         * importante: los literales de cadenas se almacenan en el String Pool (una zona especial de
+         * memoria).En este caso, "Gabriel" se guarda en ese pool de strings.
+         */
         String nombre = "Gabriel";
-        /*Aquí declaramos una variable llamada otroNombre de tipo String y le asignamos el valor "Gabriel".
-         Como ese literal ya existe en el String Pool, Java no crea un nuevo objeto, sino que reutiliza el mismo.
-         Resultado:
-         nombre y otroNombre apuntan al mismo objeto en memoria.
-        */
+        /*
+         * Aquí declaramos una variable llamada otroNombre de tipo String y le asignamos el valor
+         * "Gabriel". Como ese literal ya existe en el String Pool, Java no crea un nuevo objeto,
+         * sino que reutiliza el mismo. Resultado: nombre y otroNombre apuntan al mismo objeto en
+         * memoria.
+         */
         String otroNombre = "Gabriel";
-        // Con el comparador de igualdad (==) comparamos las referencias en memoria de ambos objetos.
+        // Con el comparador de igualdad (==) comparamos las referencias en memoria de ambos
+        // objetos.
         // Como ambos apuntan al mismo objeto, la comparación devuelve true.
         // Con el método equals() comparamos el contenido de las cadenas.
         // Como ambas cadenas tienen el mismo contenido, la comparación también devuelve true.
@@ -165,10 +175,11 @@ public class Inicio {
         // CASO 2:
         String nombre2 = "Gisele";
         String otroNombre2 = "Carla";
-        /* aqui se asignan dentro del String Pool estos dos literales, pero a cada uno se le reserva un espacio de la memoria distinto ya que el contenido no es igual
-         * Resultado:
-         * nombre2 y otroNombre2 apuntan a objetos diferentes en memoria. entonces == devuelve false
-         * y equals tambien devuelve false porque el contenido es diferente
+        /*
+         * aqui se asignan dentro del String Pool estos dos literales, pero a cada uno se le reserva
+         * un espacio de la memoria distinto ya que el contenido no es igual Resultado: nombre2 y
+         * otroNombre2 apuntan a objetos diferentes en memoria. entonces == devuelve false y equals
+         * tambien devuelve false porque el contenido es diferente
          */
         System.out.println(nombre2 == otroNombre2); // false
         System.out.println(nombre2.equals(otroNombre2)); // false
@@ -176,22 +187,25 @@ public class Inicio {
         // CASO 3:
         String nombre3 = new String("Mariana");
         String otroNombre3 = new String("Mariana");
-        /* Aquí usamos el operador new para crear dos nuevos objetos String en memoria, ambos con el contenido "Mariana".
-         *Se crean dos nuevos objetos en el heap, fuera del pool.
-         * Aunque el contenido es el mismo, cada llamada a new crea un objeto distinto en memoria.
-         * Resultado:
+        /*
+         * Aquí usamos el operador new para crear dos nuevos objetos String en memoria, ambos con el
+         * contenido "Mariana". Se crean dos nuevos objetos en el heap, fuera del pool. Aunque el
+         * contenido es el mismo, cada llamada a new crea un objeto distinto en memoria. Resultado:
          * nombre3 y otroNombre3 apuntan a objetos diferentes en memoria. entonces == devuelve false
-         * pero equals devuelve true porque el contenido es igual
-         * Si querés que un String creado con new se guarde o reutilice en el String Pool, usás el método .intern():
+         * pero equals devuelve true porque el contenido es igual Si querés que un String creado con
+         * new se guarde o reutilice en el String Pool, usás el método .intern():
          */
-        //CASO:
-        // LOS STRING SON INMUTABLES, ES DECIR QUE NO PUEDEN CAMBIAR SU CONTENIDO. 
+        // CASO:
+        // LOS STRING SON INMUTABLES, ES DECIR QUE NO PUEDEN CAMBIAR SU CONTENIDO.
         String nombreUno = "Gabriel";
         String nombreDos = "Gabriel";
 
         System.out.println(nombreUno == nombreDos); // true
-            
-        //aca vemos como si le "estamos cambiando el contenido a nombreDos" pero en realidad lo que sucede es que como Juan no existe en el String Pool, se crea un nuevo objeto en memoria y nombreDos ahora apunta a ese nuevo objeto, si Juan ya existiera en el String Pool, nombreDos pasaria a apuntar a ese objeto ya existente en el String Pool.
+
+        // aca vemos como si le "estamos cambiando el contenido a nombreDos" pero en realidad lo que
+        // sucede es que como Juan no existe en el String Pool, se crea un nuevo objeto en memoria y
+        // nombreDos ahora apunta a ese nuevo objeto, si Juan ya existiera en el String Pool,
+        // nombreDos pasaria a apuntar a ese objeto ya existente en el String Pool.
         //
         nombreDos = "Juan"; // nombreDos ahora apunta a otro objeto
 
@@ -199,8 +213,8 @@ public class Inicio {
         System.out.println(nombreUno); // Gabriel
         System.out.println(nombreDos); // Juan
 
-              
-        
+
+
         // Operadores de comparación
         // > mayor que
         // < menor que
@@ -214,12 +228,12 @@ public class Inicio {
         // || (OR)
         // ! (NOT)
 
-        //Condicionales and
+        // Condicionales and
         // v && v = v
         // v && f = f
         // f && v = f
         // f && f = f
-        //Condicionales or
+        // Condicionales or
         // v || v = v
         // v || f = v
         // f || v = v
@@ -229,7 +243,8 @@ public class Inicio {
         // !f = v
 
         // Verificamos si el usuario es mayor de edad
-        if ( edad >= 18 ){ // si es mayor o igual a 18 entra al bloque y muestro que puede ingresar al sistema
+        if (edad >= 18) { // si es mayor o igual a 18 entra al bloque y muestro que puede ingresar
+                          // al sistema
             System.out.println("Puede ingresar al sistema");
         } else {// sino, entra al bloque else y muestro que no puede ingresar al sistema
             System.out.println("No puede ingresar al sistema");
@@ -245,7 +260,9 @@ public class Inicio {
             System.out.println("Eres mayor de edad.");
             // Aquí puedes agregar más lógica si es necesario
         }
-        // Si el usuario ingresa un valor no numérico, el programa lanzará una excepción InputMismatchException.
-        // Para manejar esto, podríamos usar un bloque try-catch (no implementado aquí para mantenerlo simple).
+        // Si el usuario ingresa un valor no numérico, el programa lanzará una excepción
+        // InputMismatchException.
+        // Para manejar esto, podríamos usar un bloque try-catch (no implementado aquí para
+        // mantenerlo simple).
     }
 }

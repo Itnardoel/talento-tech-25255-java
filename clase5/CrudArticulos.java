@@ -1,8 +1,8 @@
-package clase4;
+package clase5;
 
 // Importamos las librerías necesarias
 import java.util.ArrayList; // Para usar ArrayList en lugar de arrays fijos
-import java.util.Scanner;   // Para leer datos del usuario desde consola
+import java.util.Scanner; // Para leer datos del usuario desde consola
 
 // Clase principal del programa
 public class CrudArticulos {
@@ -40,7 +40,8 @@ public class CrudArticulos {
                     modificarArticulo(); // Llamamos al método para modificar un artículo existente
                     break;
                 case 3:
-                    listarArticulo(); // Llamamos al método para listar un artículo en base a su posición
+                    listarArticulo(); // Llamamos al método para listar un artículo en base a su
+                                      // posición
                     break;
                 case 4:
                     listarTodos(); // Llamamos al método para listar todos los artículos
@@ -174,7 +175,8 @@ public class CrudArticulos {
 
         // Mostramos todos antes de eliminar para que el usuario elija
         listarTodos();
-        System.out.print("Ingrese la posición del artículo a eliminar (0 a " + (articulos.size() - 1) + "): ");
+        System.out.print("Ingrese la posición del artículo a eliminar (0 a "
+                + (articulos.size() - 1) + "): ");
         int pos = scanner.nextInt();
         scanner.nextLine();
 
@@ -190,17 +192,17 @@ public class CrudArticulos {
     }
     // method eliminar articulo por nombre
     // public static void eliminarArticuloPorNombre() {
-    //     if (articulos.isEmpty()) {
-    //         System.out.println("❌ No hay artículos para eliminar.");
-    //         return;
-    //     }   
-    //     System.out.print("Ingrese el nombre del artículo a eliminar: ");
-    //     String nombre = scanner.nextLine();
-    //     boolean eliminado = articulos.remove(nombre);
-    //     if (eliminado) {
-    //         System.out.println("✅ Artículo eliminado.");
-    //     } else {
-    //         System.out.println("❌ Artículo no encontrado.");
-    //     }
-   
+    // if (articulos.isEmpty()) {
+    // System.out.println("❌ No hay artículos para eliminar.");
+    // return;
+    // }
+    // System.out.print("Ingrese el nombre del artículo a eliminar: ");
+    // String nombre = scanner.nextLine();
+    // boolean eliminado = articulos.remove(nombre);
+    // if (eliminado) {
+    // System.out.println("✅ Artículo eliminado.");
+    // } else {
+    // System.out.println("❌ Artículo no encontrado.");
+    // }
+
 }

@@ -1,4 +1,4 @@
-package clase4;
+package clase5;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,11 +10,10 @@ public class ArraysVsArrayListCompleto {
         // ARRAYS FIJOS
         // ============================================================
         /*
-         * Un ARRAY en Java es una estructura de datos de TAMAÑO FIJO.
-         * - Se declara con un tipo (int, String, etc.).
-         * - Su tamaño se establece al crearlo y NO puede cambiarse.
-         * - Ventajas: más rápido y más eficiente en memoria.
-         * - Desventajas: no se puede ampliar ni reducir dinámicamente.
+         * Un ARRAY en Java es una estructura de datos de TAMAÑO FIJO. - Se declara con un tipo
+         * (int, String, etc.). - Su tamaño se establece al crearlo y NO puede cambiarse. -
+         * Ventajas: más rápido y más eficiente en memoria. - Desventajas: no se puede ampliar ni
+         * reducir dinámicamente.
          */
 
         // Crear un array de enteros de tamaño 3
@@ -48,9 +47,8 @@ public class ArraysVsArrayListCompleto {
         // ARRAYLIST
         // ============================================================
         /*
-         * Un ArrayList es una clase de Java que representa una lista dinámica.
-         * Internamente usa un array, pero maneja automáticamente el tamaño.
-         * Es más flexible que un array normal.
+         * Un ArrayList es una clase de Java que representa una lista dinámica. Internamente usa un
+         * array, pero maneja automáticamente el tamaño. Es más flexible que un array normal.
          */
 
         ArrayList<String> lista = new ArrayList<>();
@@ -63,15 +61,17 @@ public class ArraysVsArrayListCompleto {
 
         // add(int index, E e): inserta en una posición
         lista.add(1, "Carpeta"); // no devuelve nada (void)
-        // En un arrayList de Java, no podes "saltarte posiciones" dejando null las posiciones intermedias o anteriores
+        // En un arrayList de Java, no podes "saltarte posiciones" dejando null las posiciones
+        // intermedias o anteriores
         // el method add agrega siempre al final de la lista
-        // el method add con indice, inserta en la posición indicada, si esa posición existe y corre el resto a la derecha
-        // lista.add(5, "Tijera"); // ❌ IndexOutOfBoundsException en el caso de un error da excepcion.
-        /* ejemplo
-         * ArrayList<String> lista = new ArrayList<>();
-         * lista.add("A"); // índice 0 [A]
-         * lista.add("B"); // índice 1 [A , B]
-         * lista.add(1, "C"); // inserta "C" en índice 1, "B" pasa a índice 2 [A , C , B]
+        // el method add con indice, inserta en la posición indicada, si esa posición existe y corre
+        // el resto a la derecha
+        // lista.add(5, "Tijera"); // ❌ IndexOutOfBoundsException en el caso de un error da
+        // excepcion.
+        /*
+         * ejemplo ArrayList<String> lista = new ArrayList<>(); lista.add("A"); // índice 0 [A]
+         * lista.add("B"); // índice 1 [A , B] lista.add(1, "C"); // inserta "C" en índice 1, "B"
+         * pasa a índice 2 [A , C , B]
          * 
          */
 
@@ -161,42 +161,36 @@ public class ArraysVsArrayListCompleto {
         lista.forEach(item -> System.out.println("Elemento: " + item));
 
         // stream(): convierte la lista en un flujo (útil con programación funcional)
-        //s -> s.contains("a") // PARAMETRO (String s) -> CUERPO (s.contains("a"))
-        long cantidadConA = lista.stream().filter((elementoLista) -> elementoLista.contains("a")).count();
+        // s -> s.contains("a") // PARAMETRO (String s) -> CUERPO (s.contains("a"))
+        long cantidadConA =
+                lista.stream().filter((elementoLista) -> elementoLista.contains("a")).count();
         System.out.println("Cantidad de elementos con 'a': " + cantidadConA);
         // El stream permite operaciones funcionales como filter, map, reduce, etc.
-        //lo puedo hacer sin stream?
-        // porque no usar filter directamente sobre la lista ? 
+        // lo puedo hacer sin stream?
+        // porque no usar filter directamente sobre la lista ?
 
         // LAMBDAS ESTRUCTURA BASICA:
-        /* QUE ES UNA LAMBDA
-         * Una lambda es una función anónima (sin nombre) que se puede pasar como parámetro.
+        /*
+         * QUE ES UNA LAMBDA Una lambda es una función anónima (sin nombre) que se puede pasar como
+         * parámetro.
          */
         // PARAMETROS -> CUERPO
         /*
-         * (parametros) -> {
-         *      // cuerpo
-         *      return valor; // si es necesario
-         * }
+         * (parametros) -> { // cuerpo return valor; // si es necesario }
          */
         // ============================================================
         // DIFERENCIAS PRINCIPALES
         // ============================================================
         /*
-         * ARRAY:
-         *  - Tamaño fijo.
-         *  - Más rápido y eficiente en memoria.
-         *  - Se usa para datos de tamaño conocido.
+         * ARRAY: - Tamaño fijo. - Más rápido y eficiente en memoria. - Se usa para datos de tamaño
+         * conocido.
          *
-         * ARRAYLIST:
-         *  - Tamaño dinámico (se agranda y achica automáticamente).
-         *  - Tiene métodos útiles (add, remove, contains, size, sort, etc.).
-         *  - Se usa para colecciones donde la cantidad de elementos cambia.
+         * ARRAYLIST: - Tamaño dinámico (se agranda y achica automáticamente). - Tiene métodos
+         * útiles (add, remove, contains, size, sort, etc.). - Se usa para colecciones donde la
+         * cantidad de elementos cambia.
          *
-         * NOTA:
-         *  - Un array de String NO puede agregar posiciones dinámicamente.
-         *    Si lo definís con tamaño 3, siempre tendrá 3.
-         *  - Un ArrayList<String> sí puede crecer dinámicamente.
+         * NOTA: - Un array de String NO puede agregar posiciones dinámicamente. Si lo definís con
+         * tamaño 3, siempre tendrá 3. - Un ArrayList<String> sí puede crecer dinámicamente.
          */
     }
 }
