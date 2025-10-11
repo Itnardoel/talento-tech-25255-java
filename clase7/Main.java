@@ -46,8 +46,8 @@ public class Main {
     // - Porque no necesitamos encapsularlos en la clase Main.
     // - Porque Main actúa como un orquestador y no tiene lógica de negocio.
     // - Porque no hay riesgo de acceso indebido desde otras clases.
-    final CrudProductos crudProd = new CrudProducto(productos, categorias);
-    final CrudCategorias crudCat = new CrudCategoria(categorias);
+    final CrudProducto crudProd = new CrudProducto(productos, categorias);
+    final CrudCategoria crudCat = new CrudCategoria(categorias);
 
     int opcion;
     do {
